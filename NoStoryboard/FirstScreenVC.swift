@@ -20,11 +20,11 @@ class FirstScreenVC: UIViewController {
         navigationController?.navigationBar.topItem?.title = "View Code !"
         
         // Second, call the configurator
-        configNextButton()
+        configComponents()
     }
     
     // Third, configure the UI
-    func configNextButton() {
+    func configComponents() {
         nextButton.backgroundColor = UIColor.white
         nextButton.layer.cornerRadius = 5
         nextButton.setTitle("Press Me !", for: UIControl.State.normal)
@@ -32,11 +32,13 @@ class FirstScreenVC: UIViewController {
         nextButton.addTarget(self, action: #selector(handleNextButton), for: UIControl.Event.touchUpInside)
         
         view.addSubview(nextButton)
-        configConstraintsNextButton()
+        configConstraintsOfComponents()
     }
     
     // Fourth, configure the constraints
-    func configConstraintsNextButton() {
+    func configConstraintsOfComponents() {
+        
+        // nextButton
         nextButton.translatesAutoresizingMaskIntoConstraints = false
         nextButton.heightAnchor.constraint(equalToConstant: 44).isActive = true
         nextButton.widthAnchor.constraint(equalToConstant: 300).isActive = true
